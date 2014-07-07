@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -101,6 +103,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\school.cs">
+      <DependentUpon>TeachersReviewSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeachersReviewSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeachersReviewSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeachersReviewSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeachersReviewSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeachersReviewSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +179,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\TeachersReviewSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TeachersReviewSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TeachersReviewSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+      <LastGenOutput>TeachersReviewSystem.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\TeachersReviewSystem.edmx.diagram">
+      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\TeachersReviewSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+      <LastGenOutput>TeachersReviewSystem.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -203,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

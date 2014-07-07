@@ -1,0 +1,10 @@
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\TeachersReviewSystem.Tests.dll.config
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\TeachersReviewSystem.Tests.dll
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\TeachersReviewSystem.Tests.pdb
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\TeachersReviewSystem.dll
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\EntityFramework.dll
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\TeachersReviewSystem.pdb
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\bin\Debug\EntityFramework.xml
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\obj\Debug\TeachersReviewSystem.Tests.csprojResolveAssemblyReference.cache
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\obj\Debug\TeachersReviewSystem.Tests.dll
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem.Tests\obj\Debug\TeachersReviewSystem.Tests.pdb

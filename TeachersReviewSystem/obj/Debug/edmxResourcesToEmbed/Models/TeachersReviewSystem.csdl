@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TeachersReviewSystemModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="employees" EntityType="TeachersReviewSystemModel.employee" />
+    <EntitySet Name="school1" EntityType="TeachersReviewSystemModel.school1" />
+    <EntitySet Name="studentsDetails" EntityType="TeachersReviewSystemModel.studentsDetail" />
+    <EntitySet Name="subjects" EntityType="TeachersReviewSystemModel.subject" />
+    <AssociationSet Name="FK__employee__subjec__1367E606" Association="TeachersReviewSystemModel.FK__employee__subjec__1367E606">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="employee" EntitySet="employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__subjects__school__09DE7BCC" Association="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC">
+      <End Role="school1" EntitySet="school1" />
+      <End Role="subject" EntitySet="subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsD__subje__0EA330E9" Association="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="studentsDetail" EntitySet="studentsDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Type="Int32" Name="employeeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="subjectID" Nullable="false" />
+    <Property Type="String" Name="name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="subject" Relationship="TeachersReviewSystemModel.FK__employee__subjec__1367E606" FromRole="employee" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="school1">
+    <Key>
+      <PropertyRef Name="schoolID" />
+    </Key>
+    <Property Type="Int32" Name="schoolID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="subjects" Relationship="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC" FromRole="school1" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="studentsDetail">
+    <Key>
+      <PropertyRef Name="studentDetailID" />
+    </Key>
+    <Property Type="Int32" Name="studentDetailID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="subjectID" Nullable="false" />
+    <Property Type="Int32" Name="appeared" Nullable="false" />
+    <Property Type="Int32" Name="succeeded" />
+    <NavigationProperty Name="subject" Relationship="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" FromRole="studentsDetail" ToRole="subject" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Type="Int32" Name="subjectID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="schoolID" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="year" Nullable="false" />
+    <NavigationProperty Name="employees" Relationship="TeachersReviewSystemModel.FK__employee__subjec__1367E606" FromRole="subject" ToRole="employee" />
+    <NavigationProperty Name="school" Relationship="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC" FromRole="subject" ToRole="school1" />
+    <NavigationProperty Name="studentsDetails" Relationship="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" FromRole="subject" ToRole="studentsDetail" />
+  </EntityType>
+  <Association Name="FK__employee__subjec__1367E606">
+    <End Type="TeachersReviewSystemModel.subject" Role="subject" Multiplicity="1" />
+    <End Type="TeachersReviewSystemModel.employee" Role="employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__subjects__school__09DE7BCC">
+    <End Type="TeachersReviewSystemModel.school1" Role="school1" Multiplicity="1" />
+    <End Type="TeachersReviewSystemModel.subject" Role="subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="school1">
+        <PropertyRef Name="schoolID" />
+      </Principal>
+      <Dependent Role="subject">
+        <PropertyRef Name="schoolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsD__subje__0EA330E9">
+    <End Type="TeachersReviewSystemModel.subject" Role="subject" Multiplicity="1" />
+    <End Type="TeachersReviewSystemModel.studentsDetail" Role="studentsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="studentsDetail">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

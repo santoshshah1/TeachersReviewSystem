@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeachersReviewSystemModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="school1">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.school1">
+        <MappingFragment StoreEntitySet="schools">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentsDetails">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.studentsDetail">
+        <MappingFragment StoreEntitySet="studentsDetail">
+          <ScalarProperty Name="succeeded" ColumnName="succeeded" />
+          <ScalarProperty Name="appeared" ColumnName="appeared" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="studentDetailID" ColumnName="studentDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subjects">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.subject">
+        <MappingFragment StoreEntitySet="subjects">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

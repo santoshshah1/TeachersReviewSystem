@@ -1,5 +1,6 @@
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\TeachersReviewSystem.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\TeachersReviewSystem.pdb
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\EntityFramework.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.Helpers.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.Mvc.dll
@@ -7,6 +8,7 @@ C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\Syst
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.WebPages.Deployment.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.WebPages.dll
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\EntityFramework.xml
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.Helpers.xml
 C:\Users\san\Documents\GitHub\TeachersReviewSystem\TeachersReviewSystem\bin\System.Web.Mvc.xml
