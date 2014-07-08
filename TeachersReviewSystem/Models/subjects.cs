@@ -21,7 +21,6 @@ namespace TeachersReviewSystem.Models
         }
     
         public int subjectID { get; set; }
-        public int schoolID { get; set; }
         public string name { get; set; }
         public int year { get; set; }
     

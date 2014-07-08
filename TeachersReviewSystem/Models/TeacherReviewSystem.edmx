@@ -120,7 +120,6 @@
             <PropertyRef Name="employeeID" />
           </Key>
           <Property Name="employeeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="subjectID" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="subjects" Relationship="TeachersReviewSystemModel.FK__employee__subjec__1367E606" FromRole="employee" ToRole="subjects" />
         </EntityType>
@@ -137,7 +136,6 @@
             <PropertyRef Name="studentDetailID" />
           </Key>
           <Property Name="studentDetailID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="subjectID" Type="Int32" Nullable="false" />
           <Property Name="appeared" Type="Int32" Nullable="false" />
           <Property Name="succeeded" Type="Int32" />
           <NavigationProperty Name="subjects" Relationship="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" FromRole="studentsDetail" ToRole="subjects" />
@@ -147,7 +145,6 @@
             <PropertyRef Name="subjectID" />
           </Key>
           <Property Name="subjectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="schoolID" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="year" Type="Int32" Nullable="false" />
           <NavigationProperty Name="employee" Relationship="TeachersReviewSystemModel.FK__employee__subjec__1367E606" FromRole="subjects" ToRole="employee" />
@@ -157,38 +154,14 @@
         <Association Name="FK__employee__subjec__1367E606">
           <End Role="subjects" Type="TeachersReviewSystemModel.subjects" Multiplicity="1" />
           <End Role="employee" Type="TeachersReviewSystemModel.employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="subjects">
-              <PropertyRef Name="subjectID" />
-            </Principal>
-            <Dependent Role="employee">
-              <PropertyRef Name="subjectID" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="FK__subjects__school__09DE7BCC">
           <End Role="schools" Type="TeachersReviewSystemModel.schools" Multiplicity="1" />
           <End Role="subjects" Type="TeachersReviewSystemModel.subjects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="schools">
-              <PropertyRef Name="schoolID" />
-            </Principal>
-            <Dependent Role="subjects">
-              <PropertyRef Name="schoolID" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="FK__studentsD__subje__0EA330E9">
           <End Role="subjects" Type="TeachersReviewSystemModel.subjects" Multiplicity="1" />
           <End Role="studentsDetail" Type="TeachersReviewSystemModel.studentsDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="subjects">
-              <PropertyRef Name="subjectID" />
-            </Principal>
-            <Dependent Role="studentsDetail">
-              <PropertyRef Name="subjectID" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -200,7 +173,6 @@
             <EntityTypeMapping TypeName="TeachersReviewSystemModel.employee">
               <MappingFragment StoreEntitySet="employee">
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
-                <ScalarProperty Name="subjectID" ColumnName="subjectID" />
                 <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -217,7 +189,6 @@
             <EntityTypeMapping TypeName="TeachersReviewSystemModel.studentsDetail">
               <MappingFragment StoreEntitySet="studentsDetail">
                 <ScalarProperty Name="studentDetailID" ColumnName="studentDetailID" />
-                <ScalarProperty Name="subjectID" ColumnName="subjectID" />
                 <ScalarProperty Name="appeared" ColumnName="appeared" />
                 <ScalarProperty Name="succeeded" ColumnName="succeeded" />
               </MappingFragment>
@@ -227,12 +198,35 @@
             <EntityTypeMapping TypeName="TeachersReviewSystemModel.subjects">
               <MappingFragment StoreEntitySet="subjects">
                 <ScalarProperty Name="subjectID" ColumnName="subjectID" />
-                <ScalarProperty Name="schoolID" ColumnName="schoolID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="year" ColumnName="year" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="FK__employee__subjec__1367E606" TypeName="TeachersReviewSystemModel.FK__employee__subjec__1367E606" StoreEntitySet="employee">
+            <EndProperty Name="subjects">
+              <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+            </EndProperty>
+            <EndProperty Name="employee">
+              <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__subjects__school__09DE7BCC" TypeName="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC" StoreEntitySet="subjects">
+            <EndProperty Name="schools">
+              <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+            </EndProperty>
+            <EndProperty Name="subjects">
+              <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__studentsD__subje__0EA330E9" TypeName="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" StoreEntitySet="studentsDetail">
+            <EndProperty Name="subjects">
+              <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+            </EndProperty>
+            <EndProperty Name="studentsDetail">
+              <ScalarProperty Name="studentDetailID" ColumnName="studentDetailID" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -248,7 +242,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

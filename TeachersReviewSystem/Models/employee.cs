@@ -15,7 +15,6 @@ namespace TeachersReviewSystem.Models
     public partial class employee
     {
         public int employeeID { get; set; }
-        public int subjectID { get; set; }
         public string name { get; set; }
     
         public virtual subjects subjects { get; set; }

@@ -103,23 +103,32 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\school.cs">
-      <DependentUpon>TeachersReviewSystem.tt</DependentUpon>
+    <Compile Include="Models\employee.cs">
+      <DependentUpon>TeacherReviewSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TeachersReviewSystem.Context.cs">
+    <Compile Include="Models\schools.cs">
+      <DependentUpon>TeacherReviewSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\studentsDetail.cs">
+      <DependentUpon>TeacherReviewSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\subjects.cs">
+      <DependentUpon>TeacherReviewSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeacherReviewSystem.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TeachersReviewSystem.Context.tt</DependentUpon>
+      <DependentUpon>TeacherReviewSystem.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TeachersReviewSystem.cs">
+    <Compile Include="Models\TeacherReviewSystem.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TeachersReviewSystem.tt</DependentUpon>
+      <DependentUpon>TeacherReviewSystem.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TeachersReviewSystem.Designer.cs">
+    <Compile Include="Models\TeacherReviewSystem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+      <DependentUpon>TeacherReviewSystem.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,22 +188,22 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\TeachersReviewSystem.edmx">
+    <EntityDeploy Include="Models\TeacherReviewSystem.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TeachersReviewSystem.Designer.cs</LastGenOutput>
+      <LastGenOutput>TeacherReviewSystem.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\TeachersReviewSystem.Context.tt">
+    <Content Include="Models\TeacherReviewSystem.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
-      <LastGenOutput>TeachersReviewSystem.Context.cs</LastGenOutput>
+      <DependentUpon>TeacherReviewSystem.edmx</DependentUpon>
+      <LastGenOutput>TeacherReviewSystem.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TeachersReviewSystem.edmx.diagram">
-      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
+    <Content Include="Models\TeacherReviewSystem.edmx.diagram">
+      <DependentUpon>TeacherReviewSystem.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\TeachersReviewSystem.tt">
+    <Content Include="Models\TeacherReviewSystem.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TeachersReviewSystem.edmx</DependentUpon>
-      <LastGenOutput>TeachersReviewSystem.cs</LastGenOutput>
+      <DependentUpon>TeacherReviewSystem.edmx</DependentUpon>
+      <LastGenOutput>TeacherReviewSystem.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -234,6 +243,7 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Courses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

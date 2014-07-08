@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="098a9f99a4d74f7b8c713a3c775df361" Name="Diagram1">
+      <Diagram DiagramId="8d52224b164c4d1eb62036fa9a8a00f9" Name="Diagram1">
         <EntityTypeShape EntityType="TeachersReviewSystemModel.employee" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TeachersReviewSystemModel.schools" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TeachersReviewSystemModel.studentsDetail" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TeachersReviewSystemModel.subjects" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeachersReviewSystemModel.schools" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeachersReviewSystemModel.studentsDetail" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TeachersReviewSystemModel.subjects" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="TeachersReviewSystemModel.FK__employee__subjec__1367E606" ManuallyRouted="false" />
         <AssociationConnector Association="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC" ManuallyRouted="false" />
         <AssociationConnector Association="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" ManuallyRouted="false" />

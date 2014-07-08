@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeachersReviewSystemModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="employee">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schools">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.schools">
+        <MappingFragment StoreEntitySet="schools">
+          <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentsDetail">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.studentsDetail">
+        <MappingFragment StoreEntitySet="studentsDetail">
+          <ScalarProperty Name="studentDetailID" ColumnName="studentDetailID" />
+          <ScalarProperty Name="appeared" ColumnName="appeared" />
+          <ScalarProperty Name="succeeded" ColumnName="succeeded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subjects">
+      <EntityTypeMapping TypeName="TeachersReviewSystemModel.subjects">
+        <MappingFragment StoreEntitySet="subjects">
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__employee__subjec__1367E606" TypeName="TeachersReviewSystemModel.FK__employee__subjec__1367E606" StoreEntitySet="employee">
+      <EndProperty Name="subjects">
+        <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+      </EndProperty>
+      <EndProperty Name="employee">
+        <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__subjects__school__09DE7BCC" TypeName="TeachersReviewSystemModel.FK__subjects__school__09DE7BCC" StoreEntitySet="subjects">
+      <EndProperty Name="schools">
+        <ScalarProperty Name="schoolID" ColumnName="schoolID" />
+      </EndProperty>
+      <EndProperty Name="subjects">
+        <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__studentsD__subje__0EA330E9" TypeName="TeachersReviewSystemModel.FK__studentsD__subje__0EA330E9" StoreEntitySet="studentsDetail">
+      <EndProperty Name="subjects">
+        <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+      </EndProperty>
+      <EndProperty Name="studentsDetail">
+        <ScalarProperty Name="studentDetailID" ColumnName="studentDetailID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

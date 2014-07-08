@@ -15,7 +15,6 @@ namespace TeachersReviewSystem.Models
     public partial class studentsDetail
     {
         public int studentDetailID { get; set; }
-        public int subjectID { get; set; }
         public int appeared { get; set; }
         public Nullable<int> succeeded { get; set; }
     

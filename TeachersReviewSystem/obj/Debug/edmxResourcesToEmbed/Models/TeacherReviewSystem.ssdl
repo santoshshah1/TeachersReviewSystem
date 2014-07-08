@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TeachersReviewSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TeachersReviewSystemModelStoreContainer">
+    <EntitySet Name="employee" EntityType="TeachersReviewSystemModel.Store.employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="schools" EntityType="TeachersReviewSystemModel.Store.schools" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="studentsDetail" EntityType="TeachersReviewSystemModel.Store.studentsDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="subjects" EntityType="TeachersReviewSystemModel.Store.subjects" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__employee__subjec__1367E606" Association="TeachersReviewSystemModel.Store.FK__employee__subjec__1367E606">
+      <End Role="subjects" EntitySet="subjects" />
+      <End Role="employee" EntitySet="employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__studentsD__subje__0EA330E9" Association="TeachersReviewSystemModel.Store.FK__studentsD__subje__0EA330E9">
+      <End Role="subjects" EntitySet="subjects" />
+      <End Role="studentsDetail" EntitySet="studentsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__subjects__school__09DE7BCC" Association="TeachersReviewSystemModel.Store.FK__subjects__school__09DE7BCC">
+      <End Role="schools" EntitySet="schools" />
+      <End Role="subjects" EntitySet="subjects" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="subjectID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="schools">
+    <Key>
+      <PropertyRef Name="schoolID" />
+    </Key>
+    <Property Name="schoolID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="studentsDetail">
+    <Key>
+      <PropertyRef Name="studentDetailID" />
+    </Key>
+    <Property Name="studentDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="subjectID" Type="int" Nullable="false" />
+    <Property Name="appeared" Type="int" Nullable="false" />
+    <Property Name="succeeded" Type="int" />
+  </EntityType>
+  <EntityType Name="subjects">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Name="subjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="schoolID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="year" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__employee__subjec__1367E606">
+    <End Role="subjects" Type="TeachersReviewSystemModel.Store.subjects" Multiplicity="1" />
+    <End Role="employee" Type="TeachersReviewSystemModel.Store.employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subjects">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__studentsD__subje__0EA330E9">
+    <End Role="subjects" Type="TeachersReviewSystemModel.Store.subjects" Multiplicity="1" />
+    <End Role="studentsDetail" Type="TeachersReviewSystemModel.Store.studentsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subjects">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="studentsDetail">
+        <PropertyRef Name="subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__subjects__school__09DE7BCC">
+    <End Role="schools" Type="TeachersReviewSystemModel.Store.schools" Multiplicity="1" />
+    <End Role="subjects" Type="TeachersReviewSystemModel.Store.subjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schools">
+        <PropertyRef Name="schoolID" />
+      </Principal>
+      <Dependent Role="subjects">
+        <PropertyRef Name="schoolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
